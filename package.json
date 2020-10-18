@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest --forceExit --coverage --verbose",
+    "test": "jest --coverage --verbose",
     "start": "node dist/index.js",
     "watch": "nodemon -e ts --watch src --exec \"node --require ts-node/register\" src/index.ts",
     "watch-build": "tsc -w"
