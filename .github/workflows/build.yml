@@ -17,3 +17,4 @@ jobs:
       - run: npm test
         env:
           CI: true
+          TELEGRAM_BOT_TOKEN: "" # Need to set this for envalid, not used by tests
