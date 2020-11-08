@@ -27,10 +27,8 @@ describe("Iltalehti comments", () => {
     expect(result[0].title).toBe(
       "Elina kasvatti lähes 3-metrisen kurpitsan: ”Kaivoimme 70 senttimetriä syvän kuopan kasvihuoneen lattiaan”"
     );
-    expect(result[0].username).toBe("Lahden-Erikoinen");
-    expect(result[0].comment).toBe(
-      "Ison perunan saa näemmä kasvatettua kun istuttaa siemenperunat kiinni toisiinsa"
-    );
+    expect(result[0].username).toBe("Kikkihiiti");
+    expect(result[0].comment).toBe("Trumpin kannattajille voimia");
 
     expect(result[1].title).toBe(
       "Jo 16,6 astetta mitattu Jomalassa – marraskuun lämpöennätys uusiksi toistamiseen?"
