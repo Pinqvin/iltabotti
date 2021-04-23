@@ -1,5 +1,4 @@
-import Telegraf from "telegraf";
-import { TelegrafContext } from "telegraf/typings/context";
+import { Telegraf } from "telegraf";
 
 import { config } from "./config";
 import { logger } from "./logging";
@@ -10,13 +9,13 @@ import { formatComments } from "./format";
 function start() {
   const bot = new Telegraf(config.TELEGRAM_BOT_TOKEN);
 
-  bot.catch((err: Error, ctx: TelegrafContext) => {
+  bot.catch((err, ctx) => {
     logger.error(`Encountered an unexpected error for ${ctx.updateType}`, err);
   });
 
   bot.hears(ILTALEHTI_ARTICLE, async (ctx) => {
     logger.info("Fetching comments for received Iltalehti link");
-    logger.debug(`Received ${ctx.match?.length} link(s): ${ctx.match}`);
+    logger.debug(`Received ${ctx.match.length} link(s): ${ctx.match}`);
 
     const comments = await getTopComments(ctx.match as string[]);
 
@@ -25,7 +24,7 @@ function start() {
     const reply = formatComments(comments);
 
     ctx.reply(reply, {
-      reply_to_message_id: ctx.message?.message_id,
+      reply_to_message_id: ctx.message.message_id,
       parse_mode: "MarkdownV2",
     });
   });
@@ -35,7 +34,7 @@ function start() {
   return bot;
 }
 
-function stop(signal: string, bot: Telegraf<TelegrafContext>) {
+function stop(signal: string, bot: Telegraf) {
   logger.info(`Received ${signal}, stopping server`);
   bot.stop();
 }

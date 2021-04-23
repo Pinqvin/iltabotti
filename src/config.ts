@@ -1,6 +1,8 @@
-import envalid, { str, url } from "envalid";
+import { cleanEnv, str, url } from "envalid";
 
-export const config = envalid.cleanEnv(process.env, {
+require("dotenv").config();
+
+export const config = cleanEnv(process.env, {
   LOGGING_LEVEL: str({
     choices: ["fatal", "error", "warn", "info", "debug", "trace", "silent"],
     default: "info",
