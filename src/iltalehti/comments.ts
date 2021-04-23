@@ -4,12 +4,7 @@ import { pipe } from "fp-ts/function";
 import { fold } from "fp-ts/Either";
 
 import { config } from "../config";
-
-interface IltalehtiComment {
-  title: string;
-  username: string;
-  comment: string;
-}
+import { Comment } from "../types";
 
 const CommentResult = D.type({
   data: D.type({
@@ -51,10 +46,8 @@ const ILTALEHTI_COMMENTS_QUERY = `
   } 
 `;
 
-export async function getTopComments(
-  urls: string[]
-): Promise<IltalehtiComment[]> {
-  const comments: IltalehtiComment[] = [];
+export async function getTopComments(urls: string[]): Promise<Comment[]> {
+  const comments: Comment[] = [];
 
   for (const url of urls) {
     const body = await got
@@ -85,7 +78,7 @@ export async function getTopComments(
             comments.push({
               title: result.data.asset.title ?? "",
               username: result.data.asset.comments.nodes[0].user.username,
-              comment: result.data.asset.comments.nodes[0].body,
+              content: result.data.asset.comments.nodes[0].body,
             });
           }
         }
