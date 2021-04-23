@@ -12,6 +12,11 @@
   },
   "author": "Juuso Tapaninen <juuso.tapaninen@gmail.com>",
   "license": "MIT",
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pinqvin/iltabotti.git"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.22",
     "@types/pino": "^6.3.4",
@@ -30,5 +35,8 @@
     "io-ts": "^2.2.13",
     "pino": "^6.9.0",
     "telegraf": "^4.3.0"
+  },
+  "engines": {
+    "node": "^14"
   }
 }
