@@ -29,7 +29,6 @@ function start() {
     const reply = formatComments(comments);
 
     ctx.reply(reply, {
-      reply_to_message_id: ctx.message.message_id,
       parse_mode: "MarkdownV2",
     });
   });
