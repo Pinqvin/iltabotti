@@ -7,9 +7,6 @@ describe("Iltalehti comments", () => {
     ]);
 
     expect(result.length).toBe(1);
-    expect(result[0].title).toBe(
-      "Kultaleijona Kevin Lankisesta leviää perätön huhu Venäjällä – myös Pelicansin tähtivahti yhdistetty KHL-seuraan"
-    );
     expect(result[0].username).toBe("Lahtelaista");
     expect(result[0].content).toBe(
       "Pelicansin talous kuntoon hyvällä siirtokorvauksella? Josko KHL osallistuisi osakeantiin. "
@@ -24,15 +21,9 @@ describe("Iltalehti comments", () => {
 
     expect(result.length).toBe(2);
 
-    expect(result[0].title).toBe(
-      "Elina kasvatti lähes 3-metrisen kurpitsan: ”Kaivoimme 70 senttimetriä syvän kuopan kasvihuoneen lattiaan”"
-    );
     expect(result[0].username).toBe("Kikkihiiti");
     expect(result[0].content).toBe("Trumpin kannattajille voimia");
 
-    expect(result[1].title).toBe(
-      "Jo 16,6 astetta mitattu Jomalassa – marraskuun lämpöennätys uusiksi toistamiseen?"
-    );
     expect(result[1].username).toBe("Jons8");
     expect(result[1].content).toBe(
       "Äkkiä bensan ja sähkön verotusta korkeammalle, sillä ilmasto pelastuu. Luonto ymmärtää korkeita veroja."

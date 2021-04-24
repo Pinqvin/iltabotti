@@ -76,7 +76,6 @@ export async function getTopComments(urls: string[]): Promise<Comment[]> {
         (result) => {
           if (result.data.asset.totalCommentCount > 0) {
             comments.push({
-              title: result.data.asset.title ?? "",
               username: result.data.asset.comments.nodes[0].user.username,
               content: result.data.asset.comments.nodes[0].body,
             });

@@ -17,11 +17,9 @@ describe("Format comments", () => {
 
     const result = formatComments(comments);
 
-    expect(result).toMatch("*test*");
     expect(result).toMatch("asd kommentoi:");
     expect(result).toMatch("text content");
 
-    expect(result).toMatch("*test 2*");
     expect(result).toMatch("asdq kommentoi:");
     expect(result).toMatch("testings me");
   });
@@ -37,7 +35,6 @@ describe("Format comments", () => {
 
     const result = formatComments(comments);
 
-    expect(result).toMatch("*test\\.*");
     expect(result).toMatch("asd kommentoi:");
     expect(result).toMatch("text content");
   });
