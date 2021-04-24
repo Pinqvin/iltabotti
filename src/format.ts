@@ -17,7 +17,7 @@ export function formatComments(comments: Comment[]): string {
       )}
 ${
   COMMENTER_EMOJIS[Math.floor(Math.random() * COMMENTER_EMOJIS.length)]
-} *${comment.username.replace(FORBIDDEN_CHARACTERS, REPLACE_VALUE)}*`
+} _${comment.username.replace(FORBIDDEN_CHARACTERS, REPLACE_VALUE)}_`
     )
     .join("\n");
 }
