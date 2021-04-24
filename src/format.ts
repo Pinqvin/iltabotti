@@ -11,15 +11,14 @@ const COMMENTER_EMOJIS = ["👨", "👩", "👷", "👩‍🔧"];
 export function formatComments(comments: Comment[]): string {
   return comments
     .map(
-      (comment) => `${
-        COMMENTER_EMOJIS[Math.floor(Math.random() * COMMENTER_EMOJIS.length)]
-      } ${comment.username.replace(
+      (comment) => `${comment.content.replace(
         FORBIDDEN_CHARACTERS,
         REPLACE_VALUE
-      )} kommentoi:
+      )}
 
-${comment.content.replace(FORBIDDEN_CHARACTERS, REPLACE_VALUE)}
-    `
+${
+  COMMENTER_EMOJIS[Math.floor(Math.random() * COMMENTER_EMOJIS.length)]
+} ${comment.username.replace(FORBIDDEN_CHARACTERS, REPLACE_VALUE)}`
     )
     .join("\n");
 }
