@@ -19,6 +19,11 @@ function start() {
 
     const comments = await getTopComments(ctx.match as string[]);
 
+    if (comments.length === 0) {
+      logger.info("No comments found for Iltalehti link");
+      return;
+    }
+
     logger.info(`Found ${comments.length} comment(s) for message`);
 
     const reply = formatComments(comments);
